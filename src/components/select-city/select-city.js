@@ -15,7 +15,9 @@ const access = axios.create({
 function SelectCity() {
   const [token, setToken] = useState();
   const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState('');
   const [states, setStates] = useState([]);
+  const [state, setState] = useState('');
   const [cities, setCities] = useState([]);
   const [city, setCity] = useState('');
   
@@ -52,9 +54,11 @@ function SelectCity() {
     })
   }
   function getStates(country) {
+    setCountry(country)
     setStates([]);
+    setState(null)
     setCities([]);
-    setCity('');
+    setCity(null);
     client.get(`/states/${country.value}`)
       .then((response) => {
         const data = [];
@@ -68,8 +72,9 @@ function SelectCity() {
       })
   }
   function getCities(state) {
+    setState(state);
     setCities([]);
-    setCity('');
+    setCity(null);
     client.get(`/cities/${state.value}`)
       .then((response) => {
         const data = [];
@@ -91,6 +96,7 @@ function SelectCity() {
     <div className="select_wrapper">
       <Select 
         className="select"
+        value={country}
         options={countries} 
         placeholder="Select country"
         isSearchable
@@ -100,6 +106,7 @@ function SelectCity() {
       />
       <Select 
         className="select"
+        value={state}
         options={states}
         placeholder="Select state"
         isSearchable
@@ -109,6 +116,7 @@ function SelectCity() {
       />
       <Select 
         className="select"
+        value={city}
         options={cities}
         placeholder="Select city"
         isSearchable
