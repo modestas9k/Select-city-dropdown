@@ -1,0 +1,17 @@
+.select_wrapper {
+  display: inline-flex;
+}
+.select {
+  min-width: 200px;
+  margin: 5px;
+}
+@media (max-width: 620px) {
+  .select_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .select {
+    width: 100%;
+  }
+}
