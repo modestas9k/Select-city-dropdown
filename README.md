@@ -12,13 +12,13 @@ Small select city dropdown component with Rest API.
 npm i
 ```
 
-3. For run App in terminal write:
+3. Next you need to register in https://www.universal-tutorial.com/rest-apis/free-rest-api-for-country-state-city, then generated token and email put in .env file.
+
+4. For run App in terminal write:
 
 ```sh
 npm run start
 ```
-
-4. Next you need to register in https://www.universal-tutorial.com/rest-apis/free-rest-api-for-country-state-city, then generated token and email put in .env file.
 
 ### Note:
 
